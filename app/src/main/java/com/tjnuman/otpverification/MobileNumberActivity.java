@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,20 +30,27 @@ public class MobileNumberActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mobile_number);
         sendbutton = findViewById(R.id.sendbutton);
         phoneNumber = findViewById(R.id.mobileNumber);
-        phone = phoneNumber.getText().toString();
+
 
         sendbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+
+            //    Log.d("poneNumber",phone);
+                Toast.makeText(MobileNumberActivity.this, "Phone Number is: "+phoneNumber.getText().toString(), Toast.LENGTH_SHORT).show();
+
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                        "880" + phone,
+                        phoneNumber.getText().toString(),
                         60,
                         TimeUnit.SECONDS,
                         MobileNumberActivity.this,
+
                         new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                             @Override
                             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                Toast.makeText(MobileNumberActivity.this, "Verification Successful", Toast.LENGTH_SHORT).show();
+
 
                             }
 
@@ -62,6 +70,7 @@ public class MobileNumberActivity extends AppCompatActivity {
                             }
                         }
                 );
+
 
             }
         });

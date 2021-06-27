@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="4dp"
+    android:padding="8dp"
     tools:context=".OtpReciveActivity">
 
     <com.airbnb.lottie.LottieAnimationView
@@ -47,29 +47,18 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="289dp"
+        android:layout_height="58dp"
+        android:background="@drawable/shape"
         android:orientation="horizontal"
         android:padding="8dp"
-        android:weightSum="6"
 
-        android:background="@drawable/shape"
+        android:weightSum="6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="51dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_marginLeft="8dp"
-            android:text="+880"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            tools:layout_editor_absoluteX="342dp"
-            tools:layout_editor_absoluteY="340dp" />
 
         <Space
             android:layout_width="4dp"
@@ -77,12 +66,13 @@
 
         <EditText
             android:id="@+id/mobileNumber"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="51dp"
-            android:layout_weight="1"
-            android:gravity="start"
             android:background="@color/white"
-            android:hint="put 10 digit phone number"
+            android:textStyle="bold"
+            android:inputType="phone"
+            android:gravity="center"
+            android:hint="put 11 digit phone number"
             android:textColor="@color/black"
             android:textSize="20dp"
             tools:layout_editor_absoluteX="272dp"
@@ -96,9 +86,9 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="233dp"
         android:id="@+id/sendbutton"
-        android:layout_height="61dp"
+        android:layout_width="185dp"
+        android:layout_height="53dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/shapebutton"
         android:text="Send"
